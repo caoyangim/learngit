@@ -1,0 +1,30 @@
+/* pages/article/article.wxss */
+@import "/weui.wxss";
+@import "/wxParse/wxParse.wxss";
+.wxParse{
+  margin-bottom: 70rpx;
+}
+.bottom_pan{
+  position:fixed;
+  bottom:0rpx;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  background-color: white;
+}
+.tip{
+  border-radius: 0rpx;
+  padding: 20rpx;
+  display: flex;
+  justify-content:center;
+  width: 50%;
+  height: 100rpx;
+  align-items: center;
+  text-align: center;
+  border-top: 1px solid silver;
+}
+.ico{
+  margin: 10rpx;
+  width: 40rpx;
+  height: 40rpx;
+}

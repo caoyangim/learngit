@@ -1,0 +1,31 @@
+<view >
+  <video style="width: 100%;margin:1px;" src="{{videolink}}" binderror="videoErrorCallback" autoplay='true'>
+  </video>
+  <!--导航条-->
+  <view class="navbar">
+    <text wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique" bindtap="navbarTap">{{item}}</text>
+  </view>
+  
+  <!--简介-->
+  <view hidden="{{currentTab!==0}}" class='abstract'>
+    <view class="weui-article__h1">{{title}}</view>
+    <view class="weui-article__h3">{{date}}</view>
+    <text class='description' decode="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;{{description}}</text>
+  </view>
+  
+  <!--相关视频-->
+  <view hidden="{{currentTab!==1}}">
+    <scroll-view scroll-y="true" class="scoll-h" >
+            <block wx:for="{{items}}" wx:for-index="idx" wx:key="item" >
+              <view class="school-list" >
+                  <view class="school-list-info" index="{{index}}" data-id="{{idx}}" bindtap='bindToContent'>
+                    <image class="school-list-photo" src="{{item.imageUrl==null?item.thumb:item.imageUrl}}"/>
+                    <text class="school-list-desc">{{item.content==null?item.title:item.content}}</text>
+                  </view>
+              </view>
+            </block>
+        </scroll-view>
+  </view>
+  
+
+</view>

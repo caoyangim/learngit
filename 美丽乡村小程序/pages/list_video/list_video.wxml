@@ -1,0 +1,39 @@
+<!--pages/list_video/list_video.wxml-->
+
+<view wx:if="{{isShowMenu}}">
+  <scroll-view scroll-x="true" class="tab-h" scroll-left="{{scrollLeft}}">
+      <view wx:for="{{menuList}}" wx:for-index="idx" wx:for-item="menuList" wx:key="menuList" 
+      class="tab-item {{currentTab==idx?'active':''}}"  data-current="{{idx}}" bindtap="swichNav">{{menuList.catname}}</view>
+  </scroll-view>
+
+  <swiper class="tab-content" current="{{currentTab}}" duration="300" bindchange="switchTab"
+    style="height:{{winHeight}}rpx">
+      <swiper-item wx:for="{{menuList}}" wx:key="swiper">
+          <scroll-view scroll-y="true" class="scoll-h" >
+              <block wx:for="{{items}}" wx:for-index="idx" wx:key="item" >
+                <view class="school-list" >
+                    <view class="school-list-info" index="{{index}}" data-id="{{idx}}" bindtap='bindToContent'>
+                      <image class="school-list-photo" src="{{item.imageUrl}}"/>
+                      <text class="school-list-desc">{{item.content}}</text>
+                    </view>
+                </view>
+              </block>
+          </scroll-view>
+      </swiper-item>
+  </swiper>
+</view>
+
+<view wx:else>
+    <scroll-view scroll-y="true" class="scoll-h" >
+        <block wx:for="{{items}}" wx:key="item" wx:for-index="idx" >
+          <view class="school-list">
+              <view class="school-list-info" index="{{index}}"  data-id="{{idx}}" bindtap='bindToContent'>
+                <image class="school-list-photo" src="{{item.thumb}}"/>
+                <text class="school-list-desc">{{item.title}}</text>
+              </view>
+          </view>
+        </block>
+    </scroll-view>
+</view>
+
+

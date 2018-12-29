@@ -1,0 +1,72 @@
+@import "/weui.wxss";
+page{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.navbar{
+  flex: none;
+  display: flex;
+  background: #fff;
+}
+.navbar .item{
+  position: relative;
+  flex: auto;
+  text-align: center;
+  line-height: 80rpx;
+}
+.navbar .item.active{
+  color: #FFCC00;
+}
+.navbar .item.active:after{
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4rpx;
+  background: #FFCC00;
+}
+
+/* 图片 */
+.scoll-h{height: 100%;}
+
+/* 图片 */
+
+.school-list{
+  margin-top: 20rpx;
+}
+.school-list-info{
+  float: left;
+  margin-left: 20rpx;
+  margin-top: 20rpx;
+  position: relative;
+}
+
+.school-list-photo{
+  border-radius: 5px;
+  width: 350rpx;
+  height: 250rpx;
+}
+.school-list-desc{
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  display: block;
+  color: #000;
+  position: relative;
+  bottom: 3%;
+  left: 0;
+  width: 330rpx;
+  text-align: left;
+  font-size: 26rpx;
+  padding: 10rpx;
+  opacity: 0.7;
+}
+
+/* 简介 */
+.abstract{
+  line-height: 70rpx;
+  margin: 30rpx;
+}

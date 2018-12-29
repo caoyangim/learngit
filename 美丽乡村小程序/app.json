@@ -1,0 +1,18 @@
+{
+  "pages":[
+    "pages/start/start",
+    "pages/index/index",
+    "pages/list/list",
+    "pages/list_video/list_video",
+    "pages/personal/personal",
+    "pages/search/search",
+    "pages/video/video",
+    "pages/article/article"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "美丽乡村",
+    "navigationBarTextStyle":"black"
+  }
+}

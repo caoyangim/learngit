@@ -1,0 +1,43 @@
+/* pages/list_video/list_video.wxss */
+/* toppannel */
+.tab-h{
+    height: 80rpx;width: 100%; box-sizing: border-box;overflow: hidden;line-height: 80rpx;background: #F7F7F7; font-size: 16px; white-space: nowrap;position: fixed;top: 0; left: 0; z-index: 99;}
+.tab-item{margin:0 36rpx;display: inline-block;}
+.tab-item.active{color: #4675F9;position: relative;}
+.tab-item.active:after{ content: "";display: block;height: 8rpx;width: 52rpx;background: #4675F9;position: absolute; bottom: 0;left: 5rpx;border-radius: 16rpx;}
+.item-ans{ width: 100%;display: flex; flex-grow: row no-wrap;justify-content: space-between; padding: 30rpx;box-sizing: border-box; height: 190rpx;align-items: center;border-bottom: 1px solid #F2F2F2;}
+.tab-content{margin-top: 80rpx;}
+.scoll-h{height: 100%;}
+
+/* 图片 */
+
+.school-list{
+  margin-top: 20rpx;
+}
+.school-list-info{
+  float: left;
+  margin-left: 20rpx;
+  margin-top: 20rpx;
+  position: relative;
+}
+
+.school-list-photo{
+  border-radius: 5px;
+  width: 350rpx;
+  height: 250rpx;
+}
+.school-list-desc{
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  display: block;
+  color: #000;
+  position: relative;
+  bottom: 3%;
+  left: 0;
+  width: 330rpx;
+  text-align: left;
+  font-size: 26rpx;
+  padding: 10rpx;
+  opacity: 0.7;
+}

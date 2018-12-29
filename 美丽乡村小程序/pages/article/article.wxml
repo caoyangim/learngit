@@ -1,0 +1,30 @@
+<import src="../../wxParse/wxParse.wxml"/> 
+<view class="page">
+    <view class="page__bd">
+        <view class="weui-article">
+            <view class="weui-article__h1">{{msgDetail[0].title}}</view>
+            <view class="weui-article__section">
+                <view class="weui-article__section">
+                    <view class="weui-article__h3">{{time}}</view>
+                    <template class="wxParse" is="wxParse" data="{{wxParseData:article.nodes}}"/>
+                    <!-- <view class="weui-article__p">
+                        <image class="weui-article__img" src="{{msgDetail.src}}" mode="aspectFit" style="height: 180px" />
+                    </view> -->
+                </view>
+                
+            </view>
+        </view>
+
+        <view class='bottom_pan'>
+        <button class='tip' style='border-right: 1px solid silver'>
+          <image class='ico' src='/image/collect.png'></image>
+          <text class='text'>收藏</text>
+        </button>
+        <button open-type="share" class='tip' bindtap='shareTap'>
+          <image class='ico' src='/image/share.png'></image>
+          <text class='text'>分享</text>
+        </button>
+      </view>
+
+    </view>
+</view>

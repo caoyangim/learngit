@@ -1,0 +1,46 @@
+<view wx:if="{{isShowMenu}}">
+    <scroll-view scroll-x="true" class="tab-h" scroll-left="{{scrollLeft}}">
+        <view wx:for="{{menuList}}" wx:for-index="idx" wx:for-item="menuList" wx:key="menuList" 
+        class="tab-item {{currentTab==idx?'active':''}}"  data-current="{{idx}}" bindtap="swichNav">{{menuList.catname}}</view>
+    </scroll-view>
+    
+    <swiper class="tab-content" current="{{currentTab}}" duration="300" bindchange="switchTab" 
+     style="height:{{winHeight}}rpx">
+        <swiper-item wx:for="{{menuList}}" wx:key="swiper">
+            <scroll-view scroll-y="true" class="scoll-h" >
+                <block  wx:for="{{expertList}}" wx:for-index="idx" wx:for-item="expertList" wx:key="expertList">
+                    <view class="item-ans"   data-id="{{idx}}" bindtap='bindToContent' >
+                          <view class="avatar">
+                              <image class="img" src="{{expertList.thumb}}"></image>
+                          </view>
+                          <view class="expertInfo">
+                              <view class="name">{{expertList.title}}</view>
+                              <view class="tag">{{expertList.description}}</view>
+                          </view>
+                    </view>
+                </block>
+               
+                <view class='nodata' hidden='{{expertList != null}}'>
+                  <image src='/image/nodata.png' class='nodata img' mode='aspectFit'></image>
+                  <text style='color:gray'>暂无数据</text>
+                </view>
+            </scroll-view>
+        </swiper-item>
+    </swiper>
+</view>
+
+<view wx:else>
+  <scroll-view scroll-y="true" class="scoll-h" >
+      <block wx:for="{{expertList}}" wx:for-index="idx" wx:for-item="expertList" wx:key="expertList">
+          <navigator class="item-ans"  url="/pages/article/article?id={{expertList.id}}&catid={{expertList.catid}}">
+                <view class="avatar">
+                    <image class="img" src="{{expertList.thumb}}"></image>
+                </view>
+                <view class="expertInfo">
+                    <view class="name">{{expertList.title}}</view>
+                    <view class="tag">{{expertList.description}}</view>
+                </view>
+          </navigator>
+      </block>
+  </scroll-view>
+</view>

@@ -1,0 +1,26 @@
+<!--index.wxml-->
+<view class="menu_container">
+  <!--search-->
+  <view class="weui-search-bar__form">
+      <view class="weui-search-bar__box">
+        <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+        <input type="text" class="weui-search-bar__input"  disabled='true' placeholder="搜索入口" bindtap="wxSearchTab"/>
+      </view>
+</view>
+<image class='ico_per' src='/image/menu/person.png' bindtap='bindToPerson'></image>
+  
+  <!--轮播图-->
+  <swiper class="swiper" indicator-dots="true" autoplay="true" interval="5000" duration="1000">  
+    <block wx:for="{{pic}}" wx:key="pic" wx:for-index="index">  
+      <swiper-item>  
+        <image src="{{item.url}}" class="slide-image" mode="aspectFill" />  
+      </swiper-item>  
+    </block>
+  </swiper> 
+
+  <view class="menu_item" wx:key="menus" wx:for="{{menus}}" wx:for-index="idx" wx:for-item="menu" wx:if="{{idx<8}}" bindtap='bindToList' data-id="{{idx}}" data-showtype='{{menu.showtype}}'>
+      <image class="menu_icon" src="{{menu.image}}" />
+      <text class="menu_name">{{menu.catname}}</text>
+  </view>
+</view>
+
